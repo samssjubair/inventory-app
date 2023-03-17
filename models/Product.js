@@ -42,7 +42,7 @@ const productSchema=mongoose.Schema({
         type: String,
         required: true,
         enum: {
-            values: ['stock-out', 'On-stock'],
+            values: ['stock-out', 'in-stock'],
             message: "status can't be {VALUE}"
         }
     },

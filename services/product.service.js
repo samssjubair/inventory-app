@@ -1,7 +1,8 @@
 const Product = require("../models/Product");
 
-module.exports.getProductService= async ()=>{
-    const result= await Product.find({});
+module.exports.getProductService= async (filters,queries)=>{
+    // console.log(queryObject)
+    const result= await Product.find(filters).sort(queries.sortBy).select(queries.fields);
     return result
 }
 
@@ -25,6 +26,16 @@ module.exports.updateBulkProductService= async (data)=>{
     });
     const result =await Promise.all(products);
 
-    
+    return result;
+}
+
+module.exports.deleteProductService= async (id,data)=>{
+    const result = await Product.deleteOne({_id : id});
+    return result;
+}
+
+module.exports.bulkDeleteProductService= async (ids)=>{
+    console.log(ids)
+    const result = await Product.deleteMany({});
     return result;
 }
