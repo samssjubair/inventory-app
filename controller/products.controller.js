@@ -15,6 +15,15 @@ module.exports.getAllProduct= async (req,res,next)=>{
         // console.log(filtersString)
         const queries={};
 
+        if(req.query.page){
+            const {page=1,limit=10}= req.query;
+            const skip=(page-1)*10;
+            queries.skip=skip;
+            queries.limit=limit;
+
+        }
+        console.log(queries)
+
         if(req.query.sort){
             const sortBy=req.query.sort.split(',').join(' ');
             queries.sortBy=sortBy

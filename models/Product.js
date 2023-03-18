@@ -1,4 +1,8 @@
-const mongoose=require('mongoose')
+const mongoose=require('mongoose');
+const validator=require('validator');
+
+const {ObjectId}=mongoose.Schema.Types;
+
 const productSchema=mongoose.Schema({
     name: {
         type: String,
@@ -6,44 +10,35 @@ const productSchema=mongoose.Schema({
         maxLength: 100,
         required: true,
         trim: true,
+        lowercase: true,
         unique: [true, "Product name must be unique"]
     },
     description: {
         type: String,
         required: true
     },
-    price: {
-        type: Number,
+    imageUrls: [{
+        type: String,
         required: true,
-        min: [0, "price  must be positive"]
-    },
+        validate: {
+            validator: function(urls){
+                if(!Array.isArray(urls)) return false
+
+                let isValid= true;
+                urls.forEach(url => {
+                    if(!validator.isURL(url)) isValid= false;
+                });
+                return isValid;
+            },
+            message: "Please provide  valid URLs"
+        }
+    }],
     unit: {
         type: String,
         required: true,
         enum: {
-            values: ["kg","litre","pcs"],
+            values: ["kg","litre","pcs","bag","box","bottle","dozen","pack","pair","set","tube","unit","other"],
             message: "unit value can't be {VALUE}"
-        }
-    },
-    quantity: {
-        type: Number,
-        required: true,
-        min: [0, "quantity cant be negative"],
-        validate: {
-            validator: (value)=>{
-                const isInteger= Number.isInteger(value);
-                if(isInteger) {return true;}
-                else {return false;}
-            },
-            message: "Quantity must be Integer"
-        }
-    },
-    status: {
-        type: String,
-        required: true,
-        enum: {
-            values: ['stock-out', 'in-stock'],
-            message: "status can't be {VALUE}"
         }
     },
     // supplier: {
@@ -51,13 +46,20 @@ const productSchema=mongoose.Schema({
     //     required: true,
     //     ref: "Supplier"
     // },
-    // categories: [{
-    //     name: {
-    //         type: String,
-    //         required: true
-    //     },
-    //     _id: mongoose.Schema.Types.ObjectId
-    // }],
+    category: {
+        type: String,
+        required: true,
+    },
+    brand:{
+        name: {
+            type: String,
+            required: true,
+        },
+        id: {
+            type: ObjectId,
+            ref: "Brand"
+        }
+    }
 },
 {   
     timestamps: true
