@@ -12,7 +12,7 @@ const categorySchema= mongoose.Schema({
     },
     description: String,
     imageUrls: {
-        type: [String],
+        type: String,
         validate: [validator.isURL, "Please provide a valid URL"]
     }
 },{timeStamps: true});
