@@ -30,7 +30,7 @@ const brandSchema= mongoose.Schema({
     location: String,
     products: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Products'
+        ref: 'Product'
     }],
     suppliers: [{
         name: String,

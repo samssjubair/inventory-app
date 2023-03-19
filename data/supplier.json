@@ -1,0 +1,51 @@
+[{
+    "name": "Tamim vai",
+    "email": "acme@example.com",
+    "brand": {
+        "name": "aci",
+        "id": "6415dbe0249fbbc7fe970d78"
+    },
+    "contactNumber": "+8801712345678",
+    "emergencyContactNumber": "+8801912345678",
+    "tradeLicenseNumber": "123456789",
+    "presentAddress": "123, ABC Road, Dhaka-1207",
+    "permanentAddress": "123, ABC Road, Dhaka-1207",
+    "location": "dhaka",
+    "imageUrl": "https://example.com/image.jpg",
+    "nationalImageUrl": "https://example.com/national_id.jpg",
+    "status": "active"
+},
+{
+    "name": "monir vai",
+    "email": "info@freshmartbd.com",
+    "brand": {
+        "name": "",
+        "id": ""
+    },
+    "contactNumber": "+8801712345679",
+    "emergencyContactNumber": "+8801912345671",
+    "tradeLicenseNumber": "98765432",
+    "presentAddress": "234, LMN Road, Sylhet-3100",
+    "permanentAddress": "234, LMN Road, Sylhet-3100",
+    "location": "sylhet",
+    "imageUrl": "https://freshmartbd.com/images/supplier.jpg",
+    "nationalImageUrl": "https://freshmartbd.com/images/nid.jpg",
+    "status": "active"
+},
+{
+    "name": "korim",
+    "email": "sales@digitalworldbd.com",
+    "brand": {
+        "name": "",
+        "id": ""
+    },
+    "contactNumber": "+8801912345670",
+    "emergencyContactNumber": "+8801812345670",
+    "tradeLicenseNumber": "65432178",
+    "presentAddress": "789, PQR Road, Dhaka-1205",
+    "permanentAddress": "789, PQR Road, Dhaka-1205",
+    "location": "dhaka",
+    "imageUrl": "https://digitalworldbd.com/images/supplier.jpg",
+    "nationalImageUrl": "https://digitalworldbd.com/images/nid.jpg",
+    "status": "active"
+}]

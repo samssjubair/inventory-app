@@ -53,7 +53,7 @@ module.exports.getAllProduct= async (req,res,next)=>{
 module.exports.saveAProduct= async (req,res,next)=>{
     try {
         const product= await saveProductService(req.body)
-        product.logger();
+        // product.logger();
 
         res.status(200).json({
             success: true,
@@ -167,5 +167,13 @@ module.exports.bulkDeleteProducts= async (req,res,next)=>{
             message: "could not delete",
             error: error.message
         })
+    }
+}
+
+module.exports.fileUpload= async (req,res,next)=>{
+    try {
+        res.status(200).json(req.file)
+    } catch (error) {
+        
     }
 }
