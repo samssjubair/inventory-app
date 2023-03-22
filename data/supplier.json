@@ -19,15 +19,15 @@
     "name": "monir vai",
     "email": "info@freshmartbd.com",
     "brand": {
-        "name": "",
-        "id": ""
+        "name": "Fresh",
+        "id": "6415dc25249fbbc7fe970d7b"
     },
     "contactNumber": "+8801712345679",
     "emergencyContactNumber": "+8801912345671",
     "tradeLicenseNumber": "98765432",
     "presentAddress": "234, LMN Road, Sylhet-3100",
     "permanentAddress": "234, LMN Road, Sylhet-3100",
-    "location": "sylhet",
+    "location": "chittahong",
     "imageUrl": "https://freshmartbd.com/images/supplier.jpg",
     "nationalImageUrl": "https://freshmartbd.com/images/nid.jpg",
     "status": "active"

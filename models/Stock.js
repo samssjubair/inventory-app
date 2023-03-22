@@ -3,7 +3,7 @@ const validator=require('validator');
 const {ObjectId}=mongoose.Schema.Types;
 
 const stockSchema=mongoose.Schema({
-    product: {
+    productId: {
         type: ObjectId,
         ref: 'Product',
         required: true
@@ -15,7 +15,7 @@ const stockSchema=mongoose.Schema({
         required: true,
         trim: true,
         lowercase: true,
-        unique: [true, "Product name must be unique"]
+        // unique: [true, "Product name must be unique"]
     },
     description:{
         type: String,
@@ -108,6 +108,14 @@ const stockSchema=mongoose.Schema({
             required: true,
             ref: "Supplier"
         }
+        },
+        sellCount: {
+            type: Number,
+            default: 0  
         }
     }
+    
 ,{timeStamps: true});
+
+const Stock= mongoose.model('Stock',stockSchema);
+module.exports=Stock;

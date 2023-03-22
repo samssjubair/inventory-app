@@ -18,9 +18,9 @@ const brandSchema= mongoose.Schema({
         lowercase: true,
         unique: true
     },
-    phone: {
+    phoneNo: {
         type: String,
-        required: true,
+        // required: true,
         unique: true,
     },
     website: {

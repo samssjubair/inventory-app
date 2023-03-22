@@ -20,7 +20,7 @@ module.exports.getAllSuppliers = async (req,res,next)=>{
 }
 
 module.exports.saveASupplier = async (req,res,next)=>{
-    console.log('hi')
+    // console.log('hi')
     try {
         const product=await saveSupplierService(req.body);
         res.status(200).json({
